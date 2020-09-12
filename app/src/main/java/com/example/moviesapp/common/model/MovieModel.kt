@@ -1,20 +1,16 @@
-package com.example.movielist.common.model
+package com.example.moviesapp.common.model
 
 import com.google.gson.annotations.SerializedName
 
-class MovieModel() {
+data class MovieModel(
     @SerializedName("title")
-    var title: String? = null
+    val title: String,
     @SerializedName("image")
-    var image: String? = null
+    val image: String,
     @SerializedName("rating")
-    var rating: Double? = null
+    val rating: Double,
     @SerializedName("releaseYear")
-    var releaseYear: Int? = null
+    val releaseYear: Int,
     @SerializedName("genre")
-    var genre: List<String>? = null
-
-    override fun toString(): String {
-        return "MovieRepo(title=$title, image=$image, rating=$rating, releaseYear=$releaseYear, genre=$genre)"
-    }
-}
+    val genre: List<String>
+)

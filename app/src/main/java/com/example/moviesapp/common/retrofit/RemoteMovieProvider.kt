@@ -1,7 +1,7 @@
 package com.example.moviesapp.common.retrofit
 
 import android.util.Log
-import com.example.movielist.common.model.MovieModel
+import com.example.moviesapp.common.model.MovieModel
 import com.example.movielist.common.retrofit.APIInterface
 import retrofit2.Call
 import retrofit2.Callback

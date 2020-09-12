@@ -1,6 +1,6 @@
 package com.example.movielist.common.retrofit
 
-import com.example.movielist.common.model.MovieModel
+import com.example.moviesapp.common.model.MovieModel
 import retrofit2.Call
 import retrofit2.http.GET
 

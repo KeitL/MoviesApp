@@ -1,6 +1,6 @@
 package com.example.moviesapp.splash
 
-import com.example.movielist.common.model.MovieModel
+import com.example.moviesapp.common.model.MovieModel
 import com.example.moviesapp.common.MovieRepository
 import com.example.moviesapp.common.retrofit.RemoteMovieProvider
 

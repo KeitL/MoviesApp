@@ -3,6 +3,7 @@ package com.example.moviesapp.splash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.example.moviesapp.R
 import com.example.moviesapp.main.MainActivity
@@ -17,12 +18,15 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         splashViewModel.onStart()
         splashViewModel.movieLiveData.observe(this, Observer {
-            if (it){
-                openRelevantActivity()
+            when(it){
+                is SplashModel.Success -> openRelevantActivity()
+                is SplashModel.Error -> Toast.makeText(this, "blabla", Toast.LENGTH_SHORT).show()
             }
         })
-
     }
+
+    //todo refactor
+    //todo impl koin
 
     private fun openRelevantActivity(){
         val intent = Intent(this, MainActivity::class.java)
