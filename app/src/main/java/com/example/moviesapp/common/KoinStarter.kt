@@ -15,6 +15,7 @@ class KoinStarter {
             modules(getModules())
         }
     }
+    //todo add network impl module
 
     private fun getModules() = listOf(
         splashModule, mainModule, movieModule

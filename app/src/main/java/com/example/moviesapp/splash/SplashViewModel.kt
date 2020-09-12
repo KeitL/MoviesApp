@@ -2,20 +2,13 @@ package com.example.moviesapp.splash
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.movielist.common.retrofit.RetroHelper
-import com.example.moviesapp.common.DataReceivedListener
 
-class SplashViewModel(private val retroHelper: RetroHelper): ViewModel() {
-    val movieLiveData = MutableLiveData<Boolean>()
+class SplashViewModel(private val splashRepo: SplashRepo) : ViewModel() {
+    val movieLiveData = MutableLiveData<SplashModel>()
 
     fun onStart() {
-        retroHelper.getFilms(dataReceivedListener)
-    }
-
-    var dataReceivedListener = object: DataReceivedListener<Boolean> {
-        override fun onSuccess(t: Boolean?) {
-            movieLiveData.postValue(t)
+        splashRepo.fetchData { model ->
+            movieLiveData.postValue(model)
         }
     }
-
 }

@@ -9,7 +9,7 @@ class MainViewModel(val movieRepository: MovieRepository): ViewModel() {
     val movieLiveData = MutableLiveData<List<MovieModel>>()
 
     fun onStart() {
-        movieLiveData.postValue(movieRepository.getFilms())
+        movieLiveData.postValue(movieRepository.getAll())
     }
 
 }

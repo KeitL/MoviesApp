@@ -9,6 +9,6 @@ class MovieViewModel(private val movieRepository: MovieRepository):ViewModel() {
     val movieLiveData = MutableLiveData<MovieModel>()
 
     fun onStart(name: String?) {
-        movieLiveData.postValue(movieRepository.getFilmById(name))
+        movieLiveData.postValue(movieRepository.getById(name))
     }
 }

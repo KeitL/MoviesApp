@@ -1,28 +1,25 @@
 package com.example.moviesapp.common
 
-import android.util.Log
 import com.example.movielist.common.model.MovieModel
-import com.example.movielist.common.retrofit.RetroHelper
 
 interface MovieRepository {
-    fun downloadFilms(list:List<MovieModel>?);
-    fun getFilms(): List<MovieModel>?
-    fun getFilmById(name: String?): MovieModel?
+    fun set(list:List<MovieModel>)
+    fun getAll(): List<MovieModel>?
+    fun getById(name: String?): MovieModel?
 }
 
 class MovieRepositoryImpl:MovieRepository{
     private var movieList:List<MovieModel>? = null
 
-    override fun downloadFilms(list: List<MovieModel>?) {
+    override fun set(list: List<MovieModel>) {
         movieList = list
-
     }
 
-    override fun getFilms(): List<MovieModel>? {
+    override fun getAll(): List<MovieModel>? {
         return movieList
     }
 
-    override fun getFilmById(name: String?): MovieModel? {
+    override fun getById(name: String?): MovieModel? {
         var movieModel:MovieModel? = null
         for (i in movieList!!){
            if (name.equals(i.title)){
